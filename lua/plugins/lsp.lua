@@ -15,6 +15,7 @@ return {
     config = function()
       require("lspconfig").lua_ls.setup {}
       require("lspconfig").sourcekit.setup {}
+      require("lspconfig").clangd.setup {}
     end,
   }
 }
