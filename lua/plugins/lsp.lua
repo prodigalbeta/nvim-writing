@@ -1,21 +1,25 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      {
-        "folke/lazydev.nvim",
-        ft = "lua",
-        opts = {
-          library = {
-            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+    config = function()
+      local lspconfig = require('lspconfig')
+      lspconfig.sourcekit.setup {
+        capabilities = {
+          workspace = {
+            didChangeWatchedFiles = {
+              dynamicRegistration = true,
+            },
           },
         },
-      },
-    },
-    config = function()
-      require("lspconfig").lua_ls.setup {}
-      require("lspconfig").sourcekit.setup {}
-      require("lspconfig").clangd.setup {}
+      }
+
+      vim.api.nvim_create_autocmd('LspAttach', {
+        desc = "LSP Actions",
+        callback = function(args)
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, { noremap = true, silent = true })
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
+        end,
+      })
     end,
-  }
+  },
 }
