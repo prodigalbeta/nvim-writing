@@ -1,3 +1,3 @@
 return {
-  'dzfrias/noir.nvim'
+  'metalelf0/base16-black-metal-scheme'
 }
