@@ -11,9 +11,6 @@ require("config.lazy")
 -- setup must be called before loading
 vim.cmd("colorscheme base16-black-metal-gorgoroth")
 
-require('ocaml').setup()
-vim.keymap.set("n", "<leader>out", require('ocaml.actions').update_interface_type, { desc = "[O]caml [U]pdate [T]ype" })
-
 require('lualine').setup {
   options = {
     icons_enabled = true,
