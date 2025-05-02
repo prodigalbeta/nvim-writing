@@ -9,7 +9,7 @@ vim.cmd("set conceallevel=2")
 require("config.lazy")
 
 -- setup must be called before loading
-vim.cmd("colorscheme base16-black-metal-gorgoroth")
+--vim.cmd("colorscheme base16-black-metal-gorgoroth")
 
 vim.lsp.enable('clangd')
 vim.lsp.config('lua_ls', {
