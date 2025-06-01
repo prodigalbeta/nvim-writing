@@ -11,6 +11,7 @@ require("config.lazy")
 -- setup must be called before loading
 vim.cmd("colorscheme valve_gui")
 vim.api.nvim_create_user_command('TermColor', 'colorscheme default', {})
+require("oil").setup()
 
 vim.lsp.enable('zls')
 vim.lsp.enable('clangd')
