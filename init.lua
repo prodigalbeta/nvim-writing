@@ -9,8 +9,11 @@ vim.cmd("set conceallevel=2")
 require("config.lazy")
 
 -- setup must be called before loading
-vim.cmd("colorscheme valve_gui")
+vim.cmd("colorscheme noir")
+--vim.cmd("colorscheme base16-black-metal-gorgoroth")
+-- vim.cmd("colorscheme valve_gui")
 vim.api.nvim_create_user_command('TermColor', 'colorscheme default', {})
+vim.api.nvim_create_user_command('Hover', vim.lsp.buf.hover, {})
 require("oil").setup()
 
 vim.lsp.enable('zls')
